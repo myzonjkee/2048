@@ -11,6 +11,7 @@ import {
   selectCount,
 } from './counterSlice';
 import styles from './Counter.module.css';
+import { useSelector } from 'react-redux';
 
 export function Counter() {
   const dispatch = useAppDispatch();

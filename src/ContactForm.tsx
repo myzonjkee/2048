@@ -23,5 +23,5 @@ const Form = (props: InjectedFormProps) => {
 }
 
 export const ContactForm = reduxForm({
-  form: 'contact'
+  form: 'contact',
 })(Form)
