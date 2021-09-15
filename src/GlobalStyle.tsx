@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   html, body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
     background-color: ${props => props.theme.palette.background};
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   }
@@ -29,6 +30,12 @@ export const GlobalStyle = createGlobalStyle`
   }
   .flex-column {
     flex-direction: column;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+  .justify-content-center {
+    justify-content: center;
   }
 
   .w-100 {

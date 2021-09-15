@@ -69,3 +69,35 @@ export const LOG_IN_MUTATION = gql`
     }
   }
 `;
+
+export type NewGame = {
+  newGame: {
+    score: number;
+    state: number[][];
+    finished: boolean;
+  }
+}
+
+export const NEW_GAME = gql`
+  query GetNewGame {
+    newGame {
+      state
+      score
+      finished
+    }
+  }
+`;
+
+export const PROCESS_GAME = gql`
+  mutation ProcessGameMutation(
+    $game: GameInput!
+  ) {
+    processGame(
+      game: $game
+    ) {
+      score
+      state
+      finished
+    }
+  }
+`;

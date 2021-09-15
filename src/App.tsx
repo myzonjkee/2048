@@ -41,7 +41,7 @@ export const App = () => {
       default:
         return null;
     }
-  }, [modalType]);
+  }, [viewType]);
 
   return (
     <>

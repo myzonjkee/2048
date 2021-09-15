@@ -18,6 +18,7 @@ export const FormLogIn = React.memo(() => {
       dispatch(setModal(undefined));
       dispatch(setAuthData({ token, userName }));
       localStorage.setItem('token', token);
+      localStorage.setItem('userName', userName);
     },
     onError: err => console.error(err)
   });

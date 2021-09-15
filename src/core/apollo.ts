@@ -1,3 +1,5 @@
+import { store } from './store';
+import { setAuthData } from './mainReducer';
 import { ApolloClient, ApolloLink, from, HttpLink, InMemoryCache } from '@apollo/client';
 
 const httpLink = new HttpLink({
@@ -5,8 +7,9 @@ const httpLink = new HttpLink({
 });
 
 const authMiddleware = new ApolloLink((operation, forward) => {
-  const token = window.sessionStorage.getItem('token');
-  // add the authorization to the headers
+  const token = window.localStorage.getItem('token')!;
+  const userName = window.localStorage.getItem('userName')!;
+  store.dispatch(setAuthData({ token, userName }))
   if (token) {
     operation.setContext({
       headers: {
@@ -14,7 +17,6 @@ const authMiddleware = new ApolloLink((operation, forward) => {
       },
     });
   }
-
   return forward(operation);
 });
 
