@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { LeaderBoard } from './modules';
+
 export const App = () => (
   <div className="App">
-    go
+    <LeaderBoard />
   </div>
 )
