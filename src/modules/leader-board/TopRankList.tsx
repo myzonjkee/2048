@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { ListGroup, ListItem, If} from '../../../ui';
-import { HighScores, HIGH_SCORES } from '../../../core/gql';
+import { ListGroup, ListItem, If} from '../../ui';
+import { HighScores, HIGH_SCORES } from '../../core/gql';
 
 const style: React.CSSProperties = { height: 311, textAlign: 'center' };
 

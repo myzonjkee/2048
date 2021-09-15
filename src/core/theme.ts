@@ -5,6 +5,7 @@ export const theme: DefaultTheme = {
   palette: {
     text: '#756E66',
     primary: '#8f7a66',
-    background: '#FAF8F0'
+    background: '#FAF8F0',
+    gameContainer: '#bbada0'
   }
 }

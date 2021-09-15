@@ -12,6 +12,7 @@ declare module 'styled-components' {
       text: string;
       primary: string;
       background: string;
+      gameContainer: string;
     }
   }
 }

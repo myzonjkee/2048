@@ -24,8 +24,6 @@ export const HIGH_SCORES = gql`
   }
 `;
 
-
-
 export type AuthenticatedUser = {
   authenticatedUser: {
     id: string;
@@ -38,6 +36,36 @@ export const AUTHENTICATED_USER = gql`
     authenticatedUser {
       id
       name
+    }
+  }
+`;
+
+export const CREATE_USER_MUTATION = gql`
+  mutation CreateUserMutation(
+    $data: UserCreateInput
+  ) {
+    createUser(
+      data: $data
+    ) {
+      id
+    }
+  }
+`;
+
+export const LOG_IN_MUTATION = gql`
+  mutation AuthenticateUserWithPasswordMutation(
+    $email: String!
+    $password: String!
+  ) {
+    authenticateUserWithPassword(
+      email: $email
+      password: $password
+    ) {
+      token
+      item {
+        id
+        name
+      }
     }
   }
 `;
