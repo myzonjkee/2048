@@ -9,16 +9,22 @@ import { setView, setGameData, ViewType } from '../../core/mainReducer';
 export const NewGameButton = React.memo(() => {
   const dispatch = useDispatch();
 
-  const [startNewGame] = useLazyQuery<NewGame>(NEW_GAME, {
+  const [startNewGame, result] = useLazyQuery<NewGame>(NEW_GAME, {
     onCompleted: data => {
+      console.info('New game!!!');
       dispatch(setGameData(data.newGame));
       dispatch(setView(ViewType.Game));
     }
   });
 
-  const onClick = React.useCallback(e => {
+  const onClick = React.useCallback(async () => {
+    if (result.data?.newGame) {
+      const newData = await result.refetch();
+      dispatch(setGameData(newData.data.newGame));
+      return;
+    }
     startNewGame();
-  }, [startNewGame]);
+  }, [startNewGame, result.data?.newGame]);
 
   return (
     <Button
@@ -27,5 +33,5 @@ export const NewGameButton = React.memo(() => {
       children="New game"
       className="mt-4 mb-3"
     />
-  )
+  );
 })

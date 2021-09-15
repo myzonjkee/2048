@@ -12,8 +12,7 @@ export const Game = React.memo(() => {
   return (
     <>
       <H1>2048</H1>
-      <H2 className="mb-4">Leaderboard</H2>
-        <strong className="mb-4">Score: {score} </strong>
+      <H2 className="mb-4">Score: {score}</H2>
       <GameContainer>
         <GridContainer />
         <TileContainer />
