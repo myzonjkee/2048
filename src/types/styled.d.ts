@@ -7,7 +7,10 @@ interface IPalette {
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    radius: string;
     palette: {
+      text: string;
+      primary: string;
       background: string;
     }
   }
